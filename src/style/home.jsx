@@ -25,7 +25,7 @@ export const HomeStyled = styled.div`
                 width: 75vw;
                 height: 50vh;
                 margin: 30px;
-                margin-top: 50px;
+                
             }
         }
 
