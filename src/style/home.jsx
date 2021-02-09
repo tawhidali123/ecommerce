@@ -1,35 +1,12 @@
 import styled from 'styled-components';
 
 export const HomeStyled = styled.div`
-    .container{
-        text-align: center;
+    text-align: center;
 
-
-        .slide_container{
-            width: 100%;
-            height: 100%;
-            margin: 50px 0;
-            display: flex;
-            overFlow-x: auto;
-            
-            
-            ${'' /* overFlow: hidden; */}
-
-            button{
-                width: 45px;
-                height: 45px;
-            }
-
-
-            img{
-                width: 75vw;
-                height: 50vh;
-                margin: 30px;
-                
-            }
-        }
-
-
+    .items {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 10px;
     }
 
 `;
