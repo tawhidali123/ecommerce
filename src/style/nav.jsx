@@ -1,21 +1,18 @@
 import styled from 'styled-components';
 
 export const NavDiv = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    grid-gap: 10px;
+    background-color: rgb(245, 244, 242);
 
-    .container{
-        display: flex;
-        justify-content: center;
-
-        background-color: red;
-
-
-        li{
-           display: inline-block;
-           margin: 1em 3em; 
-           padding: 1em;
-           border: 5px solid black;
-           border-radius: 50px;
-        }
+    button {
+        margin: 50px 25px;
+        height: 50px;
+        width: 100px;
+        border-radius: 15px;
+        background-color: rgba(13, 9, 0, 0.8);
+        color: white;
+        box-shadow: 5px 6px #888888;
     }
-
 `;
