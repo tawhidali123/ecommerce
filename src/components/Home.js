@@ -5,9 +5,14 @@ export default function Home({products}) {
     console.log(products)
 
     let items = products.map(item => {
-        console.log(item)
+        // console.log(item)
         return(
-            <div>{item.name}</div>
+            <div key={item.id}>
+                <img src={`${item.image}`}  />
+                <h2>{item.name}</h2>
+                <p>{item.description}</p>
+                <h4>{item.price}</h4>
+            </div>
         )
     })
 
