@@ -3,20 +3,24 @@ import React from 'react'
 export const Context = React.createContext()
 
 export class AppProvider extends React.Component {
-    state = {
-        page: 'shop',
-        products: []
+    constructor(props) {
+        super(props)
+        this.state = {
+            page: 'shop',
+            products: []
+        }
     }
+    
 
     componentDidMount() {
-        fetchProducts()
+        this.fetchProducts()
     }
 
     fetchProducts = () => {
         fetch(`http://localhost:3000/products`)
         .then(resp => resp.json())
         .then(res => {
-            this.setState(state.products = res)
+            this.setState(this.state.products = res)
         })
     }
 

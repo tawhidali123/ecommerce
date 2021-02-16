@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Item({product}) {
     return (
-        <div key={product.id} style={{margin: '10px'}}>
+        <div style={{margin: '10px'}}>
             <div>
                 <img src={`${product.image}`} style={{height: '100%', width: '100%'}}  />
             </div>
