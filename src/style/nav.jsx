@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavDiv = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto;
     grid-gap: 10px;
     background-color: rgb(245, 244, 242);
 

@@ -7,7 +7,8 @@ export class AppProvider extends React.Component {
         super(props)
         this.state = {
             page: 'shop',
-            products: []
+            products: [],
+            changePage : this.changePage
         }
     }
     
@@ -22,6 +23,10 @@ export class AppProvider extends React.Component {
         .then(res => {
             this.setState(this.state.products = res)
         })
+    }
+
+    changePage = (page) => {
+        return this.setState({page})
     }
 
     render(){
