@@ -7,7 +7,7 @@ export default function CheckoutList() {
             {
                 ({products, cart}) => (
                     <div>
-                        {cart.map(item => <h1>{products[item.id].name}</h1>)}
+                        {cart.map(item => <h1>{item.product.name}</h1>)}
                     </div>
                 )
             } 
