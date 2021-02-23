@@ -31,10 +31,9 @@ export class AppProvider extends React.Component {
         return this.setState({page})
     }
 
-    addItemToCart = (productId, quantity) => {
-        console.log(this.state.cart)
+    addItemToCart = (product, quantity) => {
         let cart = [...this.state.cart]
-        cart.push({id: productId, quantity: quantity})
+        cart.push({product: product, quantity: quantity})
         return this.setState({cart})
         
     }
