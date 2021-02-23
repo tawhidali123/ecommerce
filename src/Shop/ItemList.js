@@ -7,7 +7,7 @@ export default function ItemList() {
     return (
         <Context.Consumer>
             {
-                ({products}) => {
+                ({products, addItemToCart}) => {
                     return (
                         <HomeStyled>
                             <div className='title'>
@@ -15,7 +15,11 @@ export default function ItemList() {
                             </div>
 
                             <div className='items'>
-                                {products.map(product => <Item product={product} key={product.id} />)}
+                                {products.map(product => <Item 
+                                product={product} 
+                                key={product.id} 
+                                addItemToCart={addItemToCart} 
+                                />)}
                             </div>        
                                 
                         </HomeStyled>

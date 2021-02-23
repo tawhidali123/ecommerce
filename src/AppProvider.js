@@ -8,7 +8,9 @@ export class AppProvider extends React.Component {
         this.state = {
             page: 'shop',
             products: [],
-            changePage : this.changePage
+            cart: [],
+            changePage : this.changePage,
+            addItemToCart: this.addItemToCart,
         }
     }
     
@@ -29,6 +31,14 @@ export class AppProvider extends React.Component {
         return this.setState({page})
     }
 
+    addItemToCart = (productId, quantity) => {
+        console.log(this.state.cart)
+        let cart = [...this.state.cart]
+        cart.push({id: productId, quantity: quantity})
+        return this.setState({cart})
+        
+    }
+    
     render(){
         return(
             <Context.Provider value={this.state}>
