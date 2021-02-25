@@ -8,7 +8,7 @@ export class AppProvider extends React.Component {
         this.state = {
             page: 'shop',
             products: [],
-            cart: [],
+            cart: {},
             changePage : this.changePage,
             addItemToCart: this.addItemToCart,
         }
@@ -32,8 +32,10 @@ export class AppProvider extends React.Component {
     }
 
     addItemToCart = (product, quantity) => {
-        let cart = [...this.state.cart]
-        cart.push({product: product, quantity: quantity})
+        let cart = {...this.state.cart}
+        product.id === cart[product.id] ? 
+        cart[product.id] = {productId: product.id, quantity: quantity, product: product} :
+        cart[product.id] = {productId: product.id, quantity: quantity, product: product}
         return this.setState({cart})
         
     }

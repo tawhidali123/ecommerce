@@ -6,6 +6,9 @@ const ItemStyled = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr;
     margin: 10px;
+    border: 1px solid gray;
+    border-radius: 12.5px;
+    padding: 10px;
 `
 
 export default function Item({product, addItemToCart}) {
@@ -24,7 +27,10 @@ export default function Item({product, addItemToCart}) {
                     placeholder='Quantity' 
                     onChange={e => setQuantity(e.target.value)}
                 />
-                <button onClick={() => addItemToCart(product, quantity)}>
+                <button 
+                    onClick={() => addItemToCart(product, quantity)}
+                    style={{backgroundColor: 'blue', color: 'white'}}
+                >
                     Add To cart +
                 </button>
             </div>

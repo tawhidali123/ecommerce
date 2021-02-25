@@ -5,9 +5,23 @@ export default function CheckoutList() {
     return (
         <Context.Consumer>
             {
-                ({products, cart}) => (
+                ({cart}) => (
                     <div>
-                        {cart.map(item => <h1>{item.product.name}</h1>)}
+                        <div>
+                            <h1>Cart Checkout</h1>
+                        </div>
+                        <div>
+                            {Object.keys(cart).map(cartItem => (
+                                    <div>
+                                        <h2>{cart[cartItem].product.name}</h2>
+                                        <p>Each: ${cart[cartItem].product.price}</p>
+                                        <small>qty: {cart[cartItem].quantity}</small>
+                                        <h4>Total: ${cart[cartItem].product.price * cart[cartItem].quantity}</h4>
+                                    </div>
+                                    
+                                )
+                            )}
+                        </div>
                     </div>
                 )
             } 
