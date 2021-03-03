@@ -11,7 +11,8 @@ export class AppProvider extends React.Component {
             cart: {},
             changePage : this.changePage,
             addItemToCart: this.addItemToCart,
-            removeItemFromCart: this.removeItemFromCart
+            removeItemFromCart: this.removeItemFromCart,
+            totalPrice: this.totalPrice
         }
     }
     
@@ -44,6 +45,15 @@ export class AppProvider extends React.Component {
         let cart = {...this.state.cart}
         delete cart[productId]
         return this.setState({cart})
+    }
+
+    totalPrice = () => {
+        let cart = {...this.state.cart}
+        let total = 0
+        let amount = Object.keys(cart).map(cartItem => {
+            total += (cart[cartItem].product.price * cart[cartItem].quantity)
+        })
+        return total
     }
     
     render(){

@@ -4,20 +4,19 @@ import CheckoutItem from './CheckoutItem'
 
 export default function CheckoutList() {
 
-    let totalDollars = 0
+    // let totalDollars = 0
 
     return (
         <Context.Consumer>
             {
-                ({cart, removeItemFromCart}) => (
+                ({cart, removeItemFromCart, totalPrice}) => (
                     <div>
                         <div style={{textAlign: 'center'}}>
                             <h1>Cart Checkout</h1>
                         </div>
+
                         <div>
                             {Object.keys(cart).map(cartItem => {
-                                totalDollars += (cart[cartItem].product.price * cart[cartItem].quantity)
-                            
                                 return(
                                     <CheckoutItem
                                     id={cart[cartItem].product.id} 
@@ -26,12 +25,12 @@ export default function CheckoutList() {
                                     quantity={cart[cartItem].quantity}
                                     removeItemFromCart={removeItemFromCart}
                                     />
-                                )
-                                    
+                                )    
                             })}
                         </div>
+                        
                         <div style={{float: 'right', marginRight: '10%'}}>
-                            <h1>Total: ${totalDollars}</h1>
+                            <h1>Total: ${totalPrice()}</h1>
                             <button>Checkout</button>
                         </div>
                     </div>
