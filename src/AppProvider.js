@@ -11,6 +11,7 @@ export class AppProvider extends React.Component {
             cart: {},
             changePage : this.changePage,
             addItemToCart: this.addItemToCart,
+            removeItemFromCart: this.removeItemFromCart
         }
     }
     
@@ -37,7 +38,12 @@ export class AppProvider extends React.Component {
         cart[product.id] = {productId: product.id, quantity: quantity, product: product} :
         cart[product.id] = {productId: product.id, quantity: quantity, product: product}
         return this.setState({cart})
-        
+    }
+
+    removeItemFromCart = (productId) => {
+        let cart = {...this.state.cart}
+        delete cart[productId]
+        return this.setState({cart})
     }
     
     render(){
