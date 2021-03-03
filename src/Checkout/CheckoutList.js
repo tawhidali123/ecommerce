@@ -9,7 +9,7 @@ export default function CheckoutList() {
     return (
         <Context.Consumer>
             {
-                ({cart}) => (
+                ({cart, removeItemFromCart}) => (
                     <div>
                         <div style={{textAlign: 'center'}}>
                             <h1>Cart Checkout</h1>
@@ -19,10 +19,12 @@ export default function CheckoutList() {
                                 totalDollars += (cart[cartItem].product.price * cart[cartItem].quantity)
                             
                                 return(
-                                    <CheckoutItem 
+                                    <CheckoutItem
+                                    id={cart[cartItem].product.id} 
                                     name={cart[cartItem].product.name} 
                                     price={cart[cartItem].product.price} 
                                     quantity={cart[cartItem].quantity}
+                                    removeItemFromCart={removeItemFromCart}
                                     />
                                 )
                                     
@@ -30,6 +32,7 @@ export default function CheckoutList() {
                         </div>
                         <div style={{float: 'right', marginRight: '10%'}}>
                             <h1>Total: ${totalDollars}</h1>
+                            <button>Checkout</button>
                         </div>
                     </div>
                 )
