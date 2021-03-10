@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import EditBttn from './EditBttn'
+import EditModal from './EditModal'
 
 
 const CheckoutItemStyled = styled.div`
@@ -9,7 +10,7 @@ const CheckoutItemStyled = styled.div`
     grid-template-columns: 1fr .5fr .5fr 1fr .5fr;
 `
 
-export default function CheckoutItem({id, name, price, quantity, removeItemFromCart}) {
+export default function CheckoutItem({id, name, price, quantity, removeItemFromCart, openModal}) {
     return (
         <CheckoutItemStyled>
             <div>
@@ -25,7 +26,11 @@ export default function CheckoutItem({id, name, price, quantity, removeItemFromC
                 <h4>SubTotal: ${price * quantity}</h4>
             </div>
             <div>
-                <EditBttn id={id} quantity={quantity} />
+                <button
+                onClick={() => openModal(id)}
+                >
+                    Edit
+                </button>
 
                 <button 
                 style={{color: 'red'}}
