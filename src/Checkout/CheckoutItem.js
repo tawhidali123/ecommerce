@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import EditBttn from './EditBttn'
 
 
 const CheckoutItemStyled = styled.div`
@@ -24,6 +25,8 @@ export default function CheckoutItem({id, name, price, quantity, removeItemFromC
                 <h4>SubTotal: ${price * quantity}</h4>
             </div>
             <div>
+                <EditBttn id={id} quantity={quantity} />
+
                 <button 
                 style={{color: 'red'}}
                 onClick={() => removeItemFromCart(id)}

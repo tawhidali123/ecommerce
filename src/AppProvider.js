@@ -9,10 +9,12 @@ export class AppProvider extends React.Component {
             page: 'shop',
             products: [],
             cart: {},
+            showModal: false,
             changePage : this.changePage,
             addItemToCart: this.addItemToCart,
             removeItemFromCart: this.removeItemFromCart,
-            totalPrice: this.totalPrice
+            totalPrice: this.totalPrice,
+            openModal: this.openModal
         }
     }
     
@@ -55,6 +57,17 @@ export class AppProvider extends React.Component {
         })
         return total
     }
+
+    openModal = (productId) => {
+        // let cart = {...this.state.cart}
+        return this.setState({showModal: !this.state.showModal})
+        // return cart[productId]
+    }
+
+    // editItemInCart = (productId) => {
+    //     let cart = {...this.state.cart}
+    //     cart[productId]
+    // }
     
     render(){
         return(
