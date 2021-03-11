@@ -10,7 +10,7 @@ export default function CheckoutList() {
     return (
         <Context.Consumer>
             {
-                ({cart, removeItemFromCart, totalPrice, openModal, showModal}) => (
+                ({cart, removeItemFromCart, totalPrice, toggleEditModal, showModal}) => (
                     <div>
                         <div style={{textAlign: 'center'}}>
                             <h1>Cart Checkout</h1>
@@ -25,7 +25,7 @@ export default function CheckoutList() {
                                     price={cart[cartItem].product.price} 
                                     quantity={cart[cartItem].quantity}
                                     removeItemFromCart={removeItemFromCart}
-                                    openModal={openModal}
+                                    toggleEditModal={toggleEditModal}
                                     />
                                 )    
                             })}

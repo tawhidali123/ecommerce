@@ -10,7 +10,7 @@ const CheckoutItemStyled = styled.div`
     grid-template-columns: 1fr .5fr .5fr 1fr .5fr;
 `
 
-export default function CheckoutItem({id, name, price, quantity, removeItemFromCart, openModal}) {
+export default function CheckoutItem({id, name, price, quantity, removeItemFromCart, toggleEditModal}) {
     return (
         <CheckoutItemStyled>
             <div>
@@ -27,7 +27,7 @@ export default function CheckoutItem({id, name, price, quantity, removeItemFromC
             </div>
             <div>
                 <button
-                onClick={() => openModal(id)}
+                onClick={() => toggleEditModal(id)}
                 >
                     Edit
                 </button>

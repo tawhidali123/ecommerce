@@ -6,29 +6,30 @@ import {ModalStyled} from '../Shared/ModalStyle'
 export default function EditModal() {
     let [inputVal, setInputVal] = useState(0)
 
-    const handleClick = (updateItemInCart, openModal, editCartItem) => {
-        console.log(editCartItem)
-        updateItemInCart(editCartItem, inputVal)
-        openModal(editCartItem.id)
+    const handleClick = (updateItemInCart, toggleEditModal, cartId) => {
+        updateItemInCart(cartId, inputVal)
+        toggleEditModal()
     }
 
     return (
         <Context.Consumer>
             {
-                ({editCartItem, openModal, updateItemInCart}) => (
+                ({cartId, toggleEditModal, updateItemInCart, cart}) => (
                     <ModalStyled>
                         <div className='modalContent'>
-                            <span className='close' onClick={() => openModal()}>&times;</span>
-                            <p>
-                                Quantity:
+                            <span className='close' onClick={() => toggleEditModal()}>&times;</span>
+                            <h3>{cart[cartId].product.name}</h3>
+                            <div>
+                                <p>Quantity:</p>
                                 <input 
                                     type='number' 
-                                    placeholder={`${editCartItem.quantity}`} 
+                                    placeholder={`${cart[cartId].quantity}`} 
                                     onChange={(e) => setInputVal(e.target.value)}
                                 />
-                            </p>
+                                <h3>$ {cart[cartId].product.price}</h3>
+                            </div>
                             <button 
-                            onClick={() => handleClick(updateItemInCart, openModal, editCartItem)}
+                            onClick={() => handleClick(updateItemInCart, toggleEditModal, cartId)}
                             >
                                 Update
                             </button>
