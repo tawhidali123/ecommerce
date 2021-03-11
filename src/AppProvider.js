@@ -14,7 +14,7 @@ export class AppProvider extends React.Component {
             addItemToCart: this.addItemToCart,
             removeItemFromCart: this.removeItemFromCart,
             totalPrice: this.totalPrice,
-            openModal: this.openModal,
+            toggleEditModal: this.toggleEditModal,
             updateItemInCart: this.updateItemInCart
         }
     }
@@ -59,18 +59,14 @@ export class AppProvider extends React.Component {
         return total
     }
 
-    openModal = (productId) => {
-        let cart = {...this.state.cart}
-        return this.setState({showModal: !this.state.showModal, editCartItem: cart[productId]})
+    toggleEditModal = (productId) => {
+        return this.setState({showModal: !this.state.showModal, cartId: productId})
     }
 
-    updateItemInCart = (product, updateAmount) => {
-        // let cart = {...this.state.cart}
-        // console.log(cart, product)
-        // cart[product.id] = {productId: product.id, quantity: updateAmount, product: product}
-        // return this.setState({cart})
-        this.removeItemFromCart(product.id)
-        this.addItemToCart(product, updateAmount)
+    updateItemInCart = (productId, updateAmount) => {
+        let cart = {...this.state.cart}
+        cart[productId].quantity = updateAmount
+        return this.setState({cart})
     }
     
     render(){
