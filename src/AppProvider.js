@@ -9,13 +9,15 @@ export class AppProvider extends React.Component {
             page: 'shop',
             products: [],
             cart: {},
-            showModal: false,
+            showEditModal: false,
+            showCustomerInfoModal: false,
             changePage : this.changePage,
             addItemToCart: this.addItemToCart,
             removeItemFromCart: this.removeItemFromCart,
             totalPrice: this.totalPrice,
             toggleEditModal: this.toggleEditModal,
-            updateItemInCart: this.updateItemInCart
+            updateItemInCart: this.updateItemInCart,
+            toggleCustomerInfoModal: this.toggleCustomerInfoModal
         }
     }
     
@@ -60,13 +62,18 @@ export class AppProvider extends React.Component {
     }
 
     toggleEditModal = (productId) => {
-        return this.setState({showModal: !this.state.showModal, cartId: productId})
+        return this.setState({showEditModal: !this.state.showEditModal, cartId: productId})
     }
 
     updateItemInCart = (productId, updateAmount) => {
         let cart = {...this.state.cart}
         cart[productId].quantity = updateAmount
         return this.setState({cart})
+    }
+
+    toggleCustomerInfoModal = () => {
+        console.log('ping')
+        return this.setState({showCustomerInfoModal: !this.state.showCustomerInfoModal})
     }
     
     render(){

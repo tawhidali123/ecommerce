@@ -2,15 +2,14 @@ import React from 'react'
 import { Context } from '../AppProvider'
 import CheckoutItem from './CheckoutItem'
 import EditModal from './EditModal'
+import CustomerInfoModal from './CustomerInfoModal'
 
 export default function CheckoutList() {
-
-    // let totalDollars = 0
-
     return (
         <Context.Consumer>
             {
-                ({cart, removeItemFromCart, totalPrice, toggleEditModal, showModal}) => (
+                ({cart, removeItemFromCart, totalPrice, 
+                toggleEditModal, showEditModal, showCustomerInfoModal, toggleCustomerInfoModal}) => (
                     <div>
                         <div style={{textAlign: 'center'}}>
                             <h1>Cart Checkout</h1>
@@ -33,10 +32,16 @@ export default function CheckoutList() {
 
                         <div style={{float: 'right', marginRight: '10%'}}>
                             <h1>Total: ${totalPrice()}</h1>
-                            <button>Checkout</button>
+                            <button
+                            onClick={() => toggleCustomerInfoModal()}
+                            >
+                                Next &raquo;
+                            </button>
                         </div>
 
-                        {showModal ? <EditModal /> : null}
+                        {showEditModal ? <EditModal /> : null}
+                        {showCustomerInfoModal ? 
+                        <CustomerInfoModal toggleCustomerInfoModal={toggleCustomerInfoModal} /> : null}
                     </div>
                 )
             } 
