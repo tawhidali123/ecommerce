@@ -1,8 +1,6 @@
-import React from 'react'
-import { NavDiv } from '../style/nav'
-import LogoVid from '../LogoFile/Logo.mp4'
-import { HiOutlineShoppingCart } from 'react-icons/hi'
-import { Context } from '../AppProvider'
+import { NavDiv } from '../../style/nav'
+// import { HiOutlineShoppingCart } from 'react-icons/hi'
+import { Context } from '../../AppProvider'
 
 const checkoutPage = 'checkout'
 const shopPage = 'shop'
@@ -28,10 +26,11 @@ export default function Nav() {
                                 <button>Login</button>
                             </div>
                             <div>
-                                <HiOutlineShoppingCart 
-                                    style={{width: '55px', height: '55px', margin: '50px 25px'}} 
+                                {/* <HiOutlineShoppingCart 
+                                    // style={{width: '55px', height: '55px', margin: '50px 25px'}} 
                                     onClick={() => changePage(checkoutPage)}
-                                />
+                                /> */}
+                                <button onClick={() => changePage(checkoutPage)}>View Cart</button>
                             </div>
                         </NavDiv>
                     )

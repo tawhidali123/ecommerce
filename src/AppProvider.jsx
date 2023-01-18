@@ -30,6 +30,7 @@ export class AppProvider extends React.Component {
         fetch(`http://localhost:3000/products`)
         .then(resp => resp.json())
         .then(res => {
+            console.log(res)
             this.setState(this.state.products = res)
         })
     }

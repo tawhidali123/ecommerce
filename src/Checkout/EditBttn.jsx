@@ -1,4 +1,3 @@
-import React from 'react'
 import { Context } from '../AppProvider'
 import styled from 'styled-components'
 import EditModal from './EditModal'

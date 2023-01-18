@@ -1,4 +1,3 @@
-import React from 'react';
 import {HomeStyled} from '../style/home'
 import {Context} from '../AppProvider'
 import Item from './Item'

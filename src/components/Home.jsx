@@ -1,4 +1,3 @@
-import React from 'react';
 import {HomeStyled} from '../style/home'
 import Page from '../Shared/Page'
 
@@ -6,7 +5,6 @@ export default function Home({products}) {
     console.log(products)
 
     let items = products.map(item => {
-        // console.log(item)
         return(
             <div key={item.id} style={{margin: '10px'}}>
                 <div>

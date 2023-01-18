@@ -1,4 +1,3 @@
-import React from 'react'
 import { Context } from '../AppProvider'
 import CheckoutItem from './CheckoutItem'
 import EditModal from './EditModal'

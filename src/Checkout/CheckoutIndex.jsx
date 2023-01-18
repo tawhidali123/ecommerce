@@ -1,6 +1,6 @@
-import React from 'react'
+
 import Page from '../Shared/Page'
-import Nav from '../components/Nav'
+import Nav from '../components/Navigation/Nav'
 import CheckoutList from './CheckoutList'
 
 export default function CheckoutIndex() {
