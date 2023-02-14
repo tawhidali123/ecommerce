@@ -1,5 +1,5 @@
 
-import {ModalStyled} from '../Shared/ModalStyle'
+import {ModalStyled} from '../../Shared/ModalStyle';
 
 export default function CustomerInfoModal({toggleCustomerInfoModal}) {
     return (

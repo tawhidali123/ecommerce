@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import { Context } from '../AppProvider'
-import {ModalStyled} from '../Shared/ModalStyle'
+import React, {useState} from 'react';
+import { Context } from '../../AppProvider';
+import {ModalStyled} from '../../Shared/ModalStyle';
 
 
 export default function EditModal() {
