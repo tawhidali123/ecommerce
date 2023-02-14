@@ -1,7 +1,7 @@
-import { Context } from '../AppProvider'
-import CheckoutItem from './CheckoutItem'
-import EditModal from './EditModal'
-import CustomerInfoModal from './CustomerInfoModal'
+import { Context } from '../../AppProvider';
+import CheckoutItem from './CheckoutItem';
+import EditModal from './EditModal';
+import CustomerInfoModal from './CustomerInfoModal';
 
 export default function CheckoutList() {
     return (

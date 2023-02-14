@@ -1,7 +1,7 @@
 
-import Page from '../Shared/Page'
-import Nav from '../components/Navigation/Nav'
-import CheckoutList from './CheckoutList'
+import Page from '../../Shared/Page';
+import Nav from '../Navigation/Nav';
+import CheckoutList from './CheckoutList';
 
 export default function CheckoutIndex() {
     return (
