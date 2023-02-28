@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {HomeStyled} from '../style/home'
 import {Context} from '../AppProvider'
 import Item from './Item'
@@ -12,15 +13,15 @@ export default function ItemList() {
                             <div className='title'>
                                 <h1>Shop</h1>
                             </div>
-
                             <div className='items'>
-                                {products.map(product => <Item 
-                                product={product} 
-                                key={product.id} 
-                                addItemToCart={addItemToCart} 
-                                />)}
-                            </div>        
-                                
+                                {products.map(product => (
+                                    <Item 
+                                        product={product} 
+                                        key={product.id} 
+                                        addItemToCart={addItemToCart} 
+                                    />
+                                ))}
+                            </div>            
                         </HomeStyled>
                     )
                 }

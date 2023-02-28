@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import Page from '../../Shared/Page';
 import Nav from '../Navigation/Nav';

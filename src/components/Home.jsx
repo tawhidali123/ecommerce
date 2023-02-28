@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {HomeStyled} from '../style/home'
 import Page from '../Shared/Page'
 

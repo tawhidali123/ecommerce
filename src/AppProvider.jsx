@@ -17,7 +17,8 @@ export class AppProvider extends React.Component {
             totalPrice: this.totalPrice,
             toggleEditModal: this.toggleEditModal,
             updateItemInCart: this.updateItemInCart,
-            toggleCustomerInfoModal: this.toggleCustomerInfoModal
+            toggleCustomerInfoModal: this.toggleCustomerInfoModal,
+            getProduct: this.getProduct
         }
     }
     
@@ -33,6 +34,18 @@ export class AppProvider extends React.Component {
             console.log(res)
             this.setState(this.state.products = res)
         })
+    }
+
+    getProduct = (id) => {
+        console.log(id)
+        if (this.state.products.length && id) {
+            const products = [...this.state.products];
+            const returnObj = products.find(item => item.id == id)
+            // products.map(prod => prod.id == id ? returnObj.push(prod) : null);
+            // console.log('found product', returnObj);
+            return returnObj
+        }
+        return 'no product found';
     }
 
     changePage = (page) => {
