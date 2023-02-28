@@ -1,0 +1,11 @@
+/* @font-face {
+    font-family: 'Choko-Milky';
+    src: url('../src/style/fonts/choko-milky-font/ChokoExtrude-X3j9d.otf') format('opentype');
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+body {
+    font-family: 'Anton';
+}
+

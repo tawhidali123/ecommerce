@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Context } from '../../AppProvider';
 import CheckoutItem from './CheckoutItem';
 import EditModal from './EditModal';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Page from '../Shared/Page'
 import ItemList from './ItemList'
 import Nav from '../components/Navigation/Nav'

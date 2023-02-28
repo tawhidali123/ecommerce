@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {Context} from '../AppProvider'
 
 export default function Page({name, children}) {

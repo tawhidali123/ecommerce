@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 
+// eslint-disable-next-line no-unused-vars
 const ItemStyled = styled.div`
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -17,12 +19,14 @@ export default function Item({product, addItemToCart}) {
     return (
         <ItemStyled>
             <div>
-                <img src={`${product.image}`} style={{height: '100%', width: '100%'}}  />
+                <Link to={{pathname: 'item', search: `?id=${product.id}`}}>
+                    <img src={`${product.image}`} className='w-100 db'  />
+                </Link>
             </div>
             <div>
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
-                <h4>$ {product.price}</h4>
+                <h2 className='bg-light-yellow '>{product.name}</h2>
+                <p className=''>{product.description}</p>
+                <h4 className=''>$ {product.price}</h4>
                 <input 
                     placeholder='Quantity' 
                     onChange={e => setQuantity(e.target.value)}

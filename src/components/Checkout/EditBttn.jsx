@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Context } from "../../AppProvider";
 import styled from "styled-components";
 import EditModal from "./EditModal";
